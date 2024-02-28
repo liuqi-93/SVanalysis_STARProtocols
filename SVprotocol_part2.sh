@@ -153,7 +153,7 @@ do
 done < $genome_fai
 $python3_9 $svimmer --threads $thread vcf.list $chr | $bgzip -c > population.svimmer.vcf.gz
 #**** Filtering SVs with sizes larger than 50bp and smaller than 2Mb
-$perl ${this_protocol_script_path}/code_SV_filtering.pl --tool svimmer --vcf population.svimmer.vcf.gz --len 50 --xlen 2000000
+$perl ${this_protocol_script_path}/code_SV_filtering.pl --tool svimmer --num 1 --vcf population.svimmer.vcf.gz --len 50 --xlen 2000000
 $tabix -p vcf -f population.svimmer.filtered.vcf.gz
 
 printf "INFO\t%-s\t%-s\n" "`date`" "svimmer_Nsample finished"
