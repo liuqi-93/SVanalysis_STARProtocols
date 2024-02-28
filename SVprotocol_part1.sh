@@ -277,7 +277,7 @@ then
     $samtools sort -@ $thread ${sample}.splitters.unsorted.bam -o ${sample}.splitters.bam
     #**** 132.4: Run LUMPY Express (44min)
     lumpy_log=$your_analysis_dir/130.sv.detection/Lumpy/$sample/${sample}.Lumpy.log
-    $python2 ${lumpy_install_path}/bin/lumpyexpress \
+    ${lumpy_install_path}/bin/lumpyexpress \
     -B $lumpy_input_bam \
     -S ${sample}.splitters.bam \
     -D ${sample}.discordants.bam \
